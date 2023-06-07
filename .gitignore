@@ -1,0 +1,16 @@
+.env
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+target/*
+
+*.test
+
+*.out
+
+.idea/
+*.iml
+
+go.sum

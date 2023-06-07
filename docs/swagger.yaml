@@ -1,0 +1,46 @@
+basePath: /
+definitions:
+  handler.Request:
+    properties:
+      int1:
+        type: integer
+      int2:
+        type: integer
+      limit:
+        type: integer
+      string1:
+        type: string
+      string2:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server for a FizzBuzz API.
+  title: FizzBuzz API
+  version: "1.0"
+paths:
+  /fizzbuzz:
+    post:
+      consumes:
+      - application/json
+      description: Generate a FizzBuzz sequence based on the provided parameters
+      operationId: fizzbuzz-handler
+      parameters:
+      - description: FizzBuzz parameters
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              type: string
+            type: array
+      summary: Generate a FizzBuzz sequence
+swagger: "2.0"
